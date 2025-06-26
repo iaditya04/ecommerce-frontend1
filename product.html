@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Inline styles for success message and zoom */
+    .cart-success-message {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 999;
+      font-size: 1rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .detail-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .detail-image {
+      width: 100%;
+      max-width: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .image-zoom-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .detail-info {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quantity-selector button {
+      padding: 6px 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .add-to-cart.clicked {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    .back-link {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .detail-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="main-header">
+    <div class="logo">AdityaBUG's</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#product-grid">Products</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="search-bar">
+        <input type="text" placeholder="Search products..." />
+      </div>
+      <div class="cart-icon">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+      </div>
+      <div class="hamburger-menu">☰</div>
+    </div>
+  </header>
+
+  <!-- ===== Back Button ===== -->
+  <a href="index.html" class="back-link">← Back to Products</a>
+
+  <!-- ===== Product Detail Container ===== -->
+  <main class="product-detail" id="product-detail">
+    <p>Loading product details...</p>
+  </main>
+
+  <!-- ===== Script ===== -->
+  <script src="product.js"></script>
+</body>
+</html>
